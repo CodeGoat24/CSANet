@@ -6,7 +6,7 @@ Official PyTorch Implementation for **CSANet** (**C**onvolution **S**coring **A*
 The full code of CSANet will be uploaded until the paper is accepted.
 
 
-![CA-GAN](./CSANet.png)
+![CSANet](CSANet.png)
 
 
 # Pretrained Model 

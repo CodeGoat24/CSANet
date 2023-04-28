@@ -103,7 +103,7 @@ To train CSANet on a single 3090 gpu with batch size 32 for 18 epochs, run:
 ```
 python main.py --data_root <PATH_TO_OPA> --expid <YOUR_EXPERIMENT_NAME>
 ```
-If you want to reproduce the baseline models, just replace ```main.py``` with ```main_terse.py``` / ```main_placenet.py``` / ```main_graconet.py``` for training.
+If you want to reproduce the baseline models, just replace ```main.py``` with ```main_terse.py``` / ```main_placenet.py``` / ```main_graconet.py``` / ```main_CA-GAN.py``` for training.
 
 To see the change of losses dynamically, use TensorBoard:
 ```
@@ -111,7 +111,7 @@ tensorboard --logdir result/<YOUR_EXPERIMENT_NAME>/tblog --port <YOUR_SPECIFIED_
 ```
 
 ## Inference
-To predict composite images from a trained CA-GAN model, run:
+To predict composite images from a trained CSANet model, run:
 ```
 python infer.py --data_root <PATH_TO_OPA> --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type eval
 python infer.py --data_root <PATH_TO_OPA> --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type evaluni --repeat 10

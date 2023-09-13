@@ -10,7 +10,7 @@ The full code of CSANet will be uploaded until the paper is accepted.
 
 
 # Pretrained Model 
-We provide models for **TERSE** (CVPR 2019) [[arXiv]](https://arxiv.org/abs/1904.05475), **PlaceNet** (ECCV 2020) [[arXiv]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123580562.pdf), **GracoNet**(ECCV 2022) [[arXiv]](https://arxiv.org/abs/2207.11464), **CA-GAN** (ICME 2023，full paper has not yet been published)  and our **CSANet**:
+We provide models for **TERSE** (CVPR 2019) [[arXiv]](https://arxiv.org/abs/1904.05475), **PlaceNet** (ECCV 2020) [[arXiv]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123580562.pdf), **GracoNet**(ECCV 2022) [[arXiv]](https://arxiv.org/abs/2207.11464), **CA-GAN**(ICME 2023, Oral) [[paper]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10219885) and our **CSANet**:
 
 <table>
   <thead>

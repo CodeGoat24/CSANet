@@ -1,9 +1,8 @@
-Learning Object Placement via Convolution Scoring Attention
+[BMVC2024] Learning Object Placement via Convolution Scoring Attention
 ========
 
 Official PyTorch Implementation for **CSANet** (**C**onvolution **S**coring **A**ttention based **G**enerative **A**dversarial **N**etwork). 
 
-The full code of CSANet will be uploaded until the paper is accepted.
 
 
 ![CSANet](CSANet.png)

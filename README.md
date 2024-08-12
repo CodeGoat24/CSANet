@@ -1,14 +1,21 @@
-[BMVC2024] Learning Object Placement via Convolution Scoring Attention
-========
-
-Official PyTorch Implementation for **CSANet** (**C**onvolution **S**coring **A**ttention based **G**enerative **A**dversarial **N**etwork). 
+<div align="center">
+<h1> Learning Object Placement via Convolution Scoring Attention</h1>
 
 
+[Yibin Wang](https://codegoat24.github.io)\*, Yuchao Feng, [Jianwei Zheng](https://zhengjianwei2.github.io/)&#8224;
+
+(&#8224;corresponding author)
+
+[Zhejiang University of Techonology]
+
+**BMVC 2024**
+
+</div>
 
 ![CSANet](CSANet.png)
 
 
-# Pretrained Model 
+## ⏬ Download Pre-trained Models 
 We provide models for **TERSE** (CVPR 2019) [[arXiv]](https://arxiv.org/abs/1904.05475), **PlaceNet** (ECCV 2020) [[arXiv]](https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123580562.pdf), **GracoNet**(ECCV 2022) [[arXiv]](https://arxiv.org/abs/2207.11464), **CA-GAN**(ICME 2023, Oral) [[paper]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10219885) and our **CSANet**:
 
 <table>
@@ -62,7 +69,7 @@ We provide models for **TERSE** (CVPR 2019) [[arXiv]](https://arxiv.org/abs/1904
 
 
 
-# Usage
+## 🔧 Environment Setup
 
 Install Python 3.6 and PyTorch 1.9.1 (require CUDA >= 10.2):
 ```
@@ -71,7 +78,7 @@ conda install pytorch==1.9.1 torchvision==0.10.1 torchaudio==0.9.1 cudatoolkit=1
 
 
 
-## Data preparation
+## 🌓 Data preparation
 Download and extract [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA) dataset from the official link: [google drive](https://drive.google.com/file/d/133Wic_nSqfrIajDnnxwvGzjVti-7Y6PF/view?usp=sharing). We expect the directory structure to be the following:
 ```
 <PATH_TO_OPA>
@@ -97,8 +104,8 @@ You will see some new files and directories:
   test_data_pos_unique.csv     # test annotation for positive samples with different fg/bg pairs 
 ```
 
-## Training
-To train CSANet on a single 3090 gpu with batch size 32 for 18 epochs, run:
+## 💻 Training
+To train CSANet on a single 3090 GPU with batch size 32 for 18 epochs, run:
 ```
 python main.py --data_root <PATH_TO_OPA> --expid <YOUR_EXPERIMENT_NAME>
 ```
@@ -109,7 +116,7 @@ To see the change of losses dynamically, use TensorBoard:
 tensorboard --logdir result/<YOUR_EXPERIMENT_NAME>/tblog --port <YOUR_SPECIFIED_PORT>
 ```
 
-## Inference
+## 🔥 Inference
 To predict composite images from a trained CSANet model, run:
 ```
 python infer.py --data_root <PATH_TO_OPA> --expid <YOUR_EXPERIMENT_NAME> --epoch <EPOCH_TO_EVALUATE> --eval_type eval
@@ -131,7 +138,7 @@ python infer.py --data_root <PATH_TO_OPA> --expid CSANet --epoch 18 --eval_type 
 ```
 The procedure of inferring our provided baseline models are similar. Remember to use ```--epoch 11``` for TERSE, GracoNet, ```--epoch 9``` for PlaceNet and ```--epoch 15``` for CA-GAN.
 
-## Evaluation
+## 🌈 Evaluation
 
 To evaluate [FID](https://github.com/mseitzer/pytorch-fid) score, run:
 ```
@@ -142,8 +149,23 @@ To evaluate [LPIPS](https://github.com/richzhang/PerceptualSimilarity) score, ru
 sh script/eval_lpips.sh <YOUR_EXPERIMENT_NAME> <EPOCH_TO_EVALUATE>
 ```
 
+## 🙏 Acknowledgements
+Some of the evaluation codes in this repo are borrowed and modified from [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome), [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA), [FID-Pytorch](https://github.com/mseitzer/pytorch-fid), [GracoNet](https://github.com/bcmi/GracoNet-Object-Placement) and [Perceptual Similarity](https://github.com/richzhang/PerceptualSimilarity). Thank them for their great work.
 
+## 🖊️ BibTeX
 
+If you find CSANet useful or relevant to your research, please kindly cite our paper:
 
-# Acknowledgements
-Some of the evaluation codes in this repo are borrowed and modified from [Faster-RCNN-VG](https://github.com/shilrley6/Faster-R-CNN-with-model-pretrained-on-Visual-Genome), [OPA](https://github.com/bcmi/Object-Placement-Assessment-Dataset-OPA), [FID-Pytorch](https://github.com/mseitzer/pytorch-fid), [GracoNet](https://github.com/bcmi/GracoNet-Object-Placement) and [Perceptual Similarity](https://github.com/richzhang/PerceptualSimilarity). Thanks them for their great work.
+```bibtex
+@inproceedings{face-diffuser,
+  title={High-fidelity Person-centric Subject-to-Image Synthesis},
+  author={Wang, Yibin and Feng Yuchao, Zheng, Jianwei},
+  booktitle={BMVC},
+  pages={1--13},
+  year={2024}
+}
+```
+
+## 📧 Contact
+
+If you have any technical comments or questions, please open a new issue or feel free to contact [Yibin Wang](https://codegoat24.github.io).
